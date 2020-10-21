@@ -38,17 +38,17 @@ void readIntArray(struct IntArray *array){
 	char *ptr;
 	int integer;
 	
-	
+	int i = 0; 
 	//read one int for each array index
-	for(int i = 0; i < array->length; i++){
+	while (i < array->length){
 		printf("Enter int: ");//prompts and reads positive ints from the user.
 		fgets(input, BUFSIZ, stdin);// get input from stdin/
-		int input_length = strlen(input);
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
 		if (integer <= 0)//if integer less or equal to 0, give error message.
 			printf(" Invalid input\n");
 		else
 			array->dataPtr[i] = integer; 
+			i++;
 	}
 }
 
