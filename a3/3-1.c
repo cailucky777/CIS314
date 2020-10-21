@@ -37,14 +37,15 @@ void readIntArray(struct IntArray *array){
 	char input[BUFSIZ];
 	char *ptr;
 	int integer;
-	//prompts and reads positive ints from the user.
-	printf("Enter int: ");
+	
+	
 	//read one int for each array index
 	for(int i = 0; i < array->length; i++){
+		printf("Enter int: ");//prompts and reads positive ints from the user.
 		fgets(input, sizeof(input), stdin);// get input from stdin/
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
 		if (integer <= 0)//if integer less or equal to 0, give error message.
-			printf(" Invalid input");
+			printf(" Invalid input\n");
 		else
 			array->dataPtr[i] = integer; 
 	}
@@ -90,10 +91,11 @@ int main() {
 	fgets(input, sizeof(BUFSIZ), stdin); 
 	integer = strtol(input, &ptr, 10);
 	while (integer <= 0){
-		printf("Invalid input");// print error message if not positive number.
+		printf("Invalid input 2222\n");// print error message if not positive number.
 		printf("Enter length: ");
 		fgets(input, sizeof(BUFSIZ), stdin); //again if input valid number
 		integer = strtol(input, &ptr, 10);
+		
 	}
 	
 	struct IntArray* newArray = mallocIntArray(integer);
