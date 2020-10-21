@@ -93,7 +93,9 @@ int main() {
 	while (integer <= 0){
 		printf("Invalid input 2222\n");// print error message if not positive number.
 		printf("Enter length: ");
+		printf("说不定是这里\n")
 		fgets(input, sizeof(BUFSIZ), stdin); //again if input valid number
+		printf("????????\n")
 		integer = strtol(input, &ptr, 10);
 		
 	}
