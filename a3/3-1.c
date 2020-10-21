@@ -38,9 +38,9 @@ void readIntArray(struct IntArray *array){
 	char *ptr;
 	int integer;
 	
-	int i = 0; 
+	
 	//read one int for each array index
-	while (i < array->length){
+	for(int i = 0; i < array->length; i++){
 		printf("Enter int: ");//prompts and reads positive ints from the user.
 		fgets(input, BUFSIZ, stdin);// get input from stdin/
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
@@ -48,7 +48,6 @@ void readIntArray(struct IntArray *array){
 			printf(" Invalid input\n");
 		else
 			array->dataPtr[i] = integer; 
-			i++;
 	}
 }
 
@@ -63,7 +62,7 @@ void swap(int *xp, int *yp){
 // selection sort the input array in ascending order.
 void sortIntArray(struct IntArray *array){
 	//reduce the array length one by each iteration.
-	for (int i = 0; i < array->length - 1; i++){
+	for (int i = 0; i < array->length; i++){
 		int min = i;// store the minimum element, assume the first element is minimum.
 		for (int j = min + 1; j < array->length; j++){ 
 			if (array->dataPtr[j] < array->dataPtr[min]) //find the minimum element.
@@ -93,7 +92,7 @@ int main() {
 	integer = strtol(input, &ptr, 10);
 	while (integer <= 0){
 		printf("Invalid input !\n");// print error message if not positive number.
-		printf("Enter 2length: ");
+		printf("Enter length: ");
 		fgets(input, BUFSIZ, stdin); //again if input valid number
 		integer = strtol(input, &ptr, 10);
 		
