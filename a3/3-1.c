@@ -13,20 +13,20 @@ struct IntArray* mallocIntArray(int length){
 	struct IntArray *newptr;
 	// allocating memory for number of struct IntArray.
 	newptr = (struct IntArray *)(malloc(sizeof(struct IntArray)));
-	// allocating memory for int type dataPtr.
+	// allocating memory for each int type dataPtr.
 	newptr->dataPtr = (int *)malloc(length * sizeof(int));
 	//assign length value to structure length.
 	newptr->length = length;
 	//return new pointer
-	return newptr
+	return newptr;
 
 }
 
 void freeIntArray(struct IntArray *arrayPtr){
 	//free the instence and free the instance's dataPtr.
 	
-	free(*arrayPtr->dataPtr);
-	*arrayPtr->length = 0;
+	free(arrayPtr->dataPtr);
+	arrayPtr->length = 0;
 	free(arrayPtr);
 	
 }
@@ -38,7 +38,7 @@ void readIntArray(struct IntArray *array){
 	char *ptr;
 	int integer;
 	//prompts and reads positive ints from the user.
-	printf("Enter positive number: "\n);
+	printf("Enter positive number: \n");
 	//read one int for each array index
 	for(int i = 0; i < array->length; i++){
 		fgets(input, sizeof(input), stdin);// get input from stdin/
@@ -61,7 +61,7 @@ void swap(int *xp, int *yp){
 // selection sort the input array in ascending order.
 void sortIntArray(struct IntArray *array){
 	//reduce the array length one by each iteration.
-	for (int i == 0; i < array->length - 1; i++){
+	for (int i = 0; i < array->length - 1; i++){
 		int min = i;// store the minimum element, assume the first element is minimum.
 		for (int j = i+1; j < array->length; j++){ 
 			if (array->dataPtr[j] < array->dataPtr[min])] //find the minimum element.
@@ -96,7 +96,7 @@ int main() {
 		integer = strtol(input, &ptr, 10);
 	}
 	
-	struct IntArray* newArray = mallocIntArray(number);
+	struct IntArray* newArray = mallocIntArray(integer);
 	readIntArray(newArray);
 	sortIntArray(newArray);
 	printIntArray(newArray);
