@@ -1,0 +1,105 @@
+314
+assignment2-(4)(5)(6)
+Luying Cai
+
+4.Convert the following hex values to decimal assuming that they are stored as 32-bit 2s complement integers
+(a)0x000000C6
+(b)0xFFFFFEC4
+(c)0xFFFFFFFF
+
+(a) 
+Because, C = 12 in decimal
+so, 12*16 + 6*(16^0) = 198
+
+(b)
+0xFFFFFEC4 => 1111 1111 1111 1111 1111 1110 1100 0100
+so, decimal from signed 2s complement is -2^11 +2^10 + 2^9 + 2^7 + 2^6+ 2^2 = -316
+
+(c)
+0xFFFFFFFF => 1111 1111 1111 1111 1111 1111 1111 1111 == -1
+so, decimal from signed 2s complement is -1.
+
+5.Convert the following hex values to decimal assuming that they are encoded as IEEE 754 single-precision floating-point numbers.
+(a) 0x80000000
+(b) 0x3FC00000
+(c) 0xC1340000
+
+(a) 0x80000000
+1000 0000 0000 0000 0000 0000 0000 0000
+1 00000000 000 0000 0000 0000 0000 0000
+S EXP      FRAC
+S: -
+E: 0 - 127 = -127
+M: 1.0
+
+1.0* 2^(-127) close to 0, therefore, -0.0.
+
+(b) 0x3FC00000
+0011 1111 1100 0000 0000 0000 0000 0000
+0 01111111 1000000...0000000
+S EXP=127      FRAC = 2^(-1)
+
+S: +
+E:127 -127 = 0
+M:1.5
+1.5*2^0 = 1.5
+
+(c) 0xC1340000
+11000001001101000000000000000000
+1 10000010 0110100...000
+S EXP=2^7+2^1=130      FRAC= 2^(-2)+2^(-3)+2^(-5) 
+
+S: -
+E: 130 - 127 = 3
+M: 1.40625
+1.40625*2^3 = -11.25
+
+6.Convert the following decimal numbers to hex encoded as IEEE 754 single-precision floating-point numbers. Write your answers in your solutions document.
+(a) 1.0
+(b) 16.5
+(c) -314.75
+
+(a) 1.0
+exp = 127 = 01111111
+sign = 0
+
+0 01111111 0000...0000
+S EXP      FRAC(23)
+
+ANS: 0x3F800000
+
+(b) 16.5 (16 1/2)
+
+10000.1
+1.00001 * 2^4
+exp = 4 + 127 = 131 = 10000011
+frac = 00001
+sign = 0
+
+therefore, 
+1 10000011 000010000....0000
+S EXP      FRAC(23)
+
+ANS: 0xC1840000
+
+(c)-314.65 
+
+100111010.1010011001100110011
+1.001110101010011001100110011 *2^8
+exp = 8+127 = 135 = 10000111
+frac = 00111010101001100110011
+sign = 1
+
+1 10000111 00111010101001100110011
+S EXP      FRAC(23)
+
+ANS: 0xC39D5333
+
+
+
+
+
+
+
+
+
