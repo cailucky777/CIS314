@@ -92,8 +92,8 @@ int main() {
 	integer = strtol(input, &ptr, 10);
 	while (integer <= 0){
 		printf("Invalid input !\n");// print error message if not positive number.
-		printf("Enter length: ");
-		fgets(input, sizeof(BUFSIZ), stdin); //again if input valid number
+		printf("Enter 2length: ");
+		fgets(input, BUFSIZ, stdin); //again if input valid number
 		integer = strtol(input, &ptr, 10);
 		
 	}
