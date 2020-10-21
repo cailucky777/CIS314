@@ -38,13 +38,13 @@ void readIntArray(struct IntArray *array){
 	char *ptr;
 	int integer;
 	//prompts and reads positive ints from the user.
-	printf("Enter positive number: \n");
+	printf("Enter int: ");
 	//read one int for each array index
 	for(int i = 0; i < array->length; i++){
 		fgets(input, sizeof(input), stdin);// get input from stdin/
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
 		if (integer <= 0)//if integer less or equal to 0, give error message.
-			printf(" Error: give me a positive number.\n");
+			printf(" Invalid input");
 		else
 			array->dataPtr[i] = integer; 
 	}
@@ -74,9 +74,9 @@ void sortIntArray(struct IntArray *array){
 void printIntArray(struct IntArray *array){
 	printf("[ "); 
 	for(int i = 0; i < array->length; i++){ //when i < array's length, print each element in array.
-		printf(" %d, ", array->dataPtr[i]);
+		printf("%d", array->dataPtr[i]);
 		if ( i != array->length - 1) // if not last one, print , after each elemnt.
-			printf(" , "); 
+			printf(","); 
 		else
 			printf(" ]\n"); // last print ]. 
 	}
@@ -90,7 +90,7 @@ int main() {
 	fgets(input, sizeof(BUFSIZ), stdin); 
 	integer = strtol(input, &ptr, 10);
 	while (integer <= 0){
-		printf("Please input a positive(>0) number.\n");// print error message if not positive number.
+		printf("Invalid input");// print error message if not positive number.
 		printf("Enter length: ");
 		fgets(input, sizeof(BUFSIZ), stdin); //again if input valid number
 		integer = strtol(input, &ptr, 10);
