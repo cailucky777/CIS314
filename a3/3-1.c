@@ -42,7 +42,7 @@ void readIntArray(struct IntArray *array){
 	//read one int for each array index
 	for(int i = 0; i < array->length; i++){
 		printf("Enter int: ");//prompts and reads positive ints from the user.
-		fgets(input, sizeof(input), stdin);// get input from stdin/
+		fgets(input, BUFSIZ, stdin);// get input from stdin/
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
 		if (integer <= 0)//if integer less or equal to 0, give error message.
 			printf(" Invalid input\n");
@@ -88,7 +88,7 @@ int main() {
 	char *ptr;
 	int integer;
 	printf("Enter length: ");//prompt the user to input a positive (>0) int length from the user
-	fgets(input, sizeof(BUFSIZ), stdin); 
+	fgets(input, BUFSIZ, stdin); 
 	integer = strtol(input, &ptr, 10);
 	while (integer <= 0){
 		printf("Invalid input !\n");// print error message if not positive number.
