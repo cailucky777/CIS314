@@ -64,7 +64,7 @@ void sortIntArray(struct IntArray *array){
 	for (int i = 0; i < array->length - 1; i++){
 		int min = i;// store the minimum element, assume the first element is minimum.
 		for (int j = i+1; j < array->length; j++){ 
-			if (array->dataPtr[j] < array->dataPtr[min])] //find the minimum element.
+			if (array->dataPtr[j] < array->dataPtr[min]) //find the minimum element.
 				min = j; //update minimum element.
 		}
 	swap(&array->dataPtr[min], &array->dataPtr[i]); // swap to keep ascending order.
