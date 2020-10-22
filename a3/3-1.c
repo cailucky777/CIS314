@@ -47,6 +47,7 @@ void readIntArray(struct IntArray *array){
 		if (integer <= 0)//if integer less or equal to 0, give error message.
 			printf(" Invalid input\n");
 			i--;
+			continue;
 		else
 			array->dataPtr[i] = integer; 
 	}
