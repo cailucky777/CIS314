@@ -44,12 +44,13 @@ void readIntArray(struct IntArray *array){
 		printf("Enter int: ");//prompts and reads positive ints from the user.
 		fgets(input, BUFSIZ, stdin);// get input from stdin/
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
-		if (integer <= 0)//if integer less or equal to 0, give error message.
+		if (integer <= 0){//if integer less or equal to 0, give error message.
 			printf(" Invalid input\n");
 			i--;
-			continue;
-		else
+		}
+		else{
 			array->dataPtr[i] = integer; 
+		}
 	}
 }
 
