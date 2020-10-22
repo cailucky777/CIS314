@@ -46,6 +46,7 @@ void readIntArray(struct IntArray *array){
 		integer = strtol(input, &ptr, 10);//change char to decimal assign to int integer.
 		if (integer <= 0)//if integer less or equal to 0, give error message.
 			printf(" Invalid input\n");
+			i--;
 		else
 			array->dataPtr[i] = integer; 
 	}
@@ -62,7 +63,7 @@ void swap(int *xp, int *yp){
 // selection sort the input array in ascending order.
 void sortIntArray(struct IntArray *array){
 	//reduce the array length one by each iteration.
-	for (int i = 0; i < array->length; i++){
+	for (int i = 0; i < array->length - 1; i++){
 		int min = i;// store the minimum element, assume the first element is minimum.
 		for (int j = min + 1; j < array->length; j++){ 
 			if (array->dataPtr[j] < array->dataPtr[min]) //find the minimum element.
