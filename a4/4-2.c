@@ -44,8 +44,8 @@ int sum(int from, int to){
 			".loop:"
 			"addq %rdi, %rax;" // add from to the result.
 			"addq $1, %rdi;" // increase from.
-				"cmpq %rsi, %rdi;" //check if from less or equal than to.
-			"jie .loop;" //if less than and equal than to, go back to loop.
+			"cmpq %rsi, %rdi;" //check if from less or equal than to.
+			"jle .loop;" //if less than and equal than to, go back to loop.
 			"movq %rax, %rbx;" // save result.
 			"movq %rbx, %rax;" // return result.
 		);
@@ -54,7 +54,7 @@ int sum(int from, int to){
 	return result;
 }
 int main() {
-	printf("%d\n",sum(1, 6));// 21
-	printf("%d\n",sum(3, 5));//12
-	printf("%d\n",sum(5, 3));//5
+	printf("%ld\n",sum(1, 6));// 21
+	printf("%ld\n",sum(3, 5));//12
+	printf("%ld\n",sum(5, 3));//5
 }
