@@ -45,7 +45,7 @@ int sum(int from, int to){
 			"addq %rdi, %rax;" // add from to the result.
 			"addq $1, %rdi;" // increase from.
 				"cmpq %rsi, %rdi;" //check if from less or equal than to.
-			"jie .loop" //if less than and equal than to, go back to loop.
+			"jie .loop;" //if less than and equal than to, go back to loop.
 			"movq %rax, %rbx;" // save result.
 			"movq %rbx, %rax;" // return result.
 		);
