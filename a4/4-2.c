@@ -41,7 +41,7 @@ int sum(int from, int to){
 			// TODO - Replace the two lines below with add, compare,
 			// jump instructions, labels, etc as necessary to implement
 			// the loop.
-			"loop:"
+			".loop:"
 			"addq %rdi, %rax;" // add from to the result.
 			"addq $1, %rdi;" // increase from.
 				"cmpq %rsi, %rdi;" //check if from less or equal than to.
