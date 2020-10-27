@@ -52,7 +52,7 @@ int sum(int from, int to){
 	// Ensure that *result* is in %rax for return - *do not modify*.
 	__asm__ ("movq %%rax, %0 #result in rax;" : "=r" ( result ));
 	return result;
-
+}
 int main() {
 	printf("%d\n",sum(1, 6));// 21
 	printf("%d\n",sum(3, 5));//12
