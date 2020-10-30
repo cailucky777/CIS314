@@ -6,7 +6,7 @@ loop:
 	movl $1, %eax       -> set mask equal to 1.
 	movl $0, %edx       -> set third argument result equal to 0.
 .L2:                    
-	testq %rax, %rax    
+	testq %rax, %rax    -> check %rax is negative,0 or positve number.
 	je .L4              -> if equal to 0, jump to line 4.
 	movq %rax, %r8      -> set return value as mask.
 	andq %rdi, %r8      -> do and operation between a and mask.

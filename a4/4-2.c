@@ -41,13 +41,12 @@ int sum(int from, int to){
 			// TODO - Replace the two lines below with add, compare,
 			// jump instructions, labels, etc as necessary to implement
 			// the loop.
-			".loop:"
+			".L2:"
 			"addq %rdi, %rax;" // add from to the result.
 			"addq $1, %rdi;" // increase from.
 			"cmpq %rsi, %rdi;" //check if from less or equal than to.
-			"jle .loop;" //if less than and equal than to, go back to loop.
-			"movq %rax, %rbx;" // save result.
-			"movq %rbx, %rax;" // return result.
+			"jle .L2;" //if less than and equal than to, go back to loop.
+			
 		);
 	// Ensure that *result* is in %rax for return - *do not modify*.
 	__asm__ ("movq %%rax, %0 #result in rax;" : "=r" ( result ));
